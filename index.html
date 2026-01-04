@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECH-PLAN MEP | Sistema para Formación Tecnológica</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container fade-in">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div>
+                    <div>TECH-PLAN MEP</div>
+                    <div class="text-sm opacity-80">Formación Tecnológica • REA Art. 30-40</div>
+                </div>
+            </div>
+            <div class="text-sm">
+                <div id="fecha-hoy"></div>
+                <div class="chip chip-success mt-1">Conectado • 100% MEP</div>
+            </div>
+        </header>
+
+        <!-- Navegación -->
+        <nav class="app-nav">
+            <button class="nav-tab active" data-view="dashboard">
+                <i class="fas fa-home mr-2"></i>Dashboard
+            </button>
+            <button class="nav-tab" data-view="planificar">
+                <i class="fas fa-calendar-alt mr-2"></i>Planificar
+            </button>
+            <button class="nav-tab" data-view="evaluar">
+                <i class="fas fa-clipboard-check mr-2"></i>Evaluar
+            </button>
+            <button class="nav-tab" data-view="reportes">
+                <i class="fas fa-chart-bar mr-2"></i>Reportes MEP
+            </button>
+        </nav>
+
+        <!-- Contenido Principal -->
+        <main class="p-6" id="app-content">
+            <!-- El sistema cargará el contenido aquí automáticamente -->
+            <div class="text-center py-12 text-gray-500">
+                <div class="text-5xl mb-4">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <p class="text-lg">Cargando sistema TECH-PLAN MEP...</p>
+                <p class="text-sm mt-2">Sistema de planificación y evaluación para Formación Tecnológica</p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="p-4 border-t text-center text-sm text-gray-600">
+            <p>Sistema desarrollado específicamente para docentes de Formación Tecnológica • 
+                Alineado al REA MEP (Art. 30-40) • 
+                <span id="contador-proyectos">0</span> proyectos cargados
+            </p>
+            <p class="mt-2">
+                <button class="btn" onclick="sistema.generarReporteMEP('7A', new Date().getMonth())">
+                    <i class="fas fa-print mr-2"></i>Generar Reporte Oficial
+                </button>
+            </p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Mostrar fecha actual
+        document.getElementById('fecha-hoy').textContent = 
+            new Date().toLocaleDateString('es-CR', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+    </script>
+</body>
+</html>
